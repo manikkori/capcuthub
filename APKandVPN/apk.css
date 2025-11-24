@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary: #00f2ea;
+    --bg: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --text: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 5px 5%;
+    width: 100%;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #222;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.hero {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-content-box {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+    }
+}
+
+.container {
+    padding: 20px 3%;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #000;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: white;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.video-wrapper.playing .play-btn {
+    opacity: 0;
+}
+
+.info {
+    padding: 12px;
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.use-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background: var(--primary);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15, 15, 15, 0.98);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-item {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0 20px;
+        padding-bottom: 5px;
+        gap: 10px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .video-wrapper {
+        height: 280px;
+    }
+
+    .hero {
+        height: 40vh;
+    }
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.loader-logo {
+    width: 100px;
+    height: auto;
+    animation: logoPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hide-loader {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.download-btn {
+    width: 100%;
+    padding: 8px;
+    margin: 7px;
+    background: var(--primary);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.download-btn:hover {
+    background: #6bb5cb;
+}
+/* --- NEW CSS FOR DOWNLOAD PAGE LAYOUT --- */
+
+/* Page Title & Logo centering */
+.page-main-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text);
+    /* White text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.apk-logo-center {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.apk-logo-center img {
+    width: 100px;
+    /* Logo size adjust kar sakte ho */
+    height: auto;
+    filter: drop-shadow(0 0 8px var(--primary));
+    /* Neon glow logo ke piche */
+}
+
+/* Table of Content Box (Simple Dark style) */
+.toc-box {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Center karne k liye */
+}
+
+.toc-header {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.toc-box ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.toc-box li {
+    margin-bottom: 8px;
+}
+
+.toc-box a {
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.toc-box a:hover {
+    color: var(--primary);
+}
+
+
+/* --- THE 2-COLUMN LAYOUT --- */
+.content-split {
+    display: flex;
+    gap: 50px;
+    /* Dono columns ke beech gap */
+    align-items: flex-start;
+    /* Upar se align rahein */
+}
+
+/* Left Column Styling */
+.content-left {
+    flex: 1;
+}
+
+.content-left h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.content-left p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Neon Download Button */
+.neon-download-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary);
+    /* Neon background */
+    color: #000 !important;
+    /* Black text zaroori hai */
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    /* Gol button */
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(0, 242, 234, 0.5);
+    /* Neon Glow */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.neon-download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 3px var(--primary);
+    /* Hover par zyada glow */
+    background-color: rgb(50, 132, 148);
+}
+
+.neon-download-btn i {
+    margin-right: 10px;
+}
+
+
+/* Right Column (Feature Box) Styling */
+.content-right {
+    flex: 1;
+}
+
+.feature-box-neon {
+    /* Solid Neon Border jaisa tune manga tha */
+    border: 2px solid var(--primary);
+    background: var(--card-bg);
+    /* Dark card background */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 20px rgba(0, 242, 234, 0.1);
+    /* Andar halka glow */
+}
+
+.feature-box-neon h3 {
+    color: var(--text);
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.feature-box-neon ol {
+    padding-left: 20px;
+    color: var(--primary);
+    /* Numbers ko neon banata hai */
+    line-height: 1.8;
+}
+
+.feature-box-neon li {
+    margin-bottom: 12px;
+}
+
+/* List ke text ko wapas white karna (span trick) */
+.feature-box-neon li span {
+    color: #ccc;
+}
+
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .content-split {
+        flex-direction: column;
+        /* Mobile par upar-niche ho jayega */
+        gap: 40px;
+    }
+
+    /* Mobile par logo thoda chota */
+    .apk-logo-center img {
+        width: 80px;
+    }
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: var(--card-bg);
+    color: #ccc;
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-disclaimer {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+    color: #999;
+    line-height: 1.5;
+}
+
+.social-links {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links a {
+    color: var(--text);
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 3%;
+    }
+    .project-disclaimer {
+        font-size: 0.8rem;
+    }
+    .social-links {
+        gap: 20px;
+        font-size: 1.5rem;
+    }
+}
